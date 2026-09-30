@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La nostra storia — Filo &amp; Trama</title>
+<meta name="description" content="La storia di Filo & Trama: meno capi, scelti meglio. Fibre naturali, laboratori vicini, abiti pensati per durare.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  /* ===== Base: uguale alla home ===== */
+  :root {
+    --fondo: #F4EFE6;
+    --inchiostro: #1E1B18;
+    --scuro: #2E2A25;
+    --linea: #D9D0C1;
+    --grigio: #5E574E;
+    --accento: #8A3F25;
+    --serif: 'Bodoni Moda', 'Didot', Georgia, serif;
+    --sans: 'Jost', 'Futura', system-ui, -apple-system, sans-serif;
+    --margine: clamp(16px, 4.5vw, 64px);
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body { margin: 0; font-family: var(--sans); background: var(--fondo); color: var(--inchiostro); }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: var(--accento); }
+  button { font-family: inherit; cursor: pointer; }
+  h1, h2, h3, p, blockquote { margin: 0; }
+  .serif { font-family: var(--serif); font-weight: 400; }
+  .occhiello { font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; color: var(--accento); }
+  .link-sottolineato { font-size: 15px; font-weight: 500; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+
+  .foto { overflow: hidden; background: var(--linea); }
+  .foto img { width: 100%; height: 100%; object-fit: cover; transition: transform 1200ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+
+  .avviso { min-height: 40px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 8px var(--margine); background: var(--inchiostro); color: var(--fondo); font-size: 13px; letter-spacing: 0.08em; }
+
+  .header { height: 88px; padding: 0 var(--margine); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; border-bottom: 1px solid var(--linea); }
+  .menu { display: flex; gap: 32px; font-size: 15px; font-weight: 500; }
+  .menu a[aria-current="page"] { color: var(--accento); border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+  .logo { font-family: var(--serif); font-size: 34px; font-weight: 400; letter-spacing: 0.04em; white-space: nowrap; }
+  .logo em { color: var(--accento); }
+  .icone { display: flex; gap: 8px; justify-content: flex-end; }
+  .icona { width: 44px; height: 44px; border: 0; background: transparent; color: var(--inchiostro); display: flex; align-items: center; justify-content: center; }
+
+  /* Ingresso animato (come nella home) */
+  .js .entra { opacity: 0; transform: translateY(70px); transition: opacity 900ms ease, transform 1100ms cubic-bezier(0.2, 0.7, 0.2, 1); transition-delay: var(--ritardo, 0ms); }
+  .js .entra .foto { clip-path: inset(100% 0 0 0); transition: clip-path 1200ms cubic-bezier(0.7, 0, 0.2, 1); transition-delay: var(--ritardo, 0ms); }
+  .js .entra .foto img { transform: scale(1.25); }
+  .js .entra.visibile { opacity: 1; transform: none; }
+  .js .entra.visibile .foto { clip-path: inset(0 0 0 0); }
+  .js .entra.visibile .foto img { transform: scale(1); }
+
+  /* ===== Copertina della pagina ===== */
+  .copertina { position: relative; height: 640px; max-height: 80vh; min-height: 460px; overflow: hidden; background: var(--scuro); display: flex; align-items: flex-end; }
+  .copertina img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; animation: zoom-lento 9s ease-out forwards; }
+  @keyframes zoom-lento { from { transform: scale(1); } to { transform: scale(1.1); } }
+  .copertina-velo { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(20,18,16,0.7) 0%, rgba(20,18,16,0.35) 50%, rgba(20,18,16,0.05) 80%); }
+  .copertina-testo { position: relative; padding: 0 96px 96px; max-width: 860px; display: flex; flex-direction: column; gap: 24px; color: #fff; }
+  .copertina .occhiello { color: #F3D9C8; }
+  .copertina h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(48px, 6.5vw, 92px); line-height: 1.02; letter-spacing: -0.01em; }
+  .copertina p { font-size: 18px; line-height: 1.6; color: var(--fondo); max-width: 500px; }
+  .briciole { font-size: 13px; letter-spacing: 0.06em; color: rgba(255,255,255,0.8); }
+  .briciole a:hover { color: #fff; text-decoration: underline; }
+
+  /* ===== Manifesto ===== */
+  .manifesto { padding: 128px var(--margine); display: grid; grid-template-columns: 1fr 2fr; gap: 64px; align-items: start; }
+  .manifesto p { font-family: var(--serif); font-size: clamp(28px, 3vw, 42px); line-height: 1.3; }
+  .manifesto p em { color: var(--accento); }
+
+  /* ===== Blocchi immagine + testo ===== */
+  .racconto { padding: 0 var(--margine) 128px; display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: center; }
+  .racconto.inverso .racconto-foto { order: 2; }
+  .racconto-foto .foto { height: 620px; }
+  .racconto-testo { display: flex; flex-direction: column; gap: 24px; max-width: 520px; }
+  .racconto-testo h2 { font-size: clamp(38px, 4vw, 52px); line-height: 1.08; }
+  .racconto-testo p { font-size: 18px; line-height: 1.75; color: #4A443D; }
+  .anno { font-family: var(--serif); font-size: 96px; line-height: 1; color: var(--linea); }
+
+  /* ===== Valori ===== */
+  .valori { background: var(--scuro); color: var(--fondo); padding: 112px var(--margine); display: flex; flex-direction: column; gap: 64px; }
+  .valori .occhiello { color: #E2B79F; }
+  .valori-testa { display: flex; flex-direction: column; gap: 16px; max-width: 640px; }
+  .valori-testa h2 { font-size: clamp(38px, 4vw, 56px); line-height: 1.05; }
+  .valori-griglia { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px; }
+  .valore { display: flex; flex-direction: column; gap: 16px; border-top: 1px solid #4A443D; padding-top: 32px; }
+  .valore-num { font-family: var(--serif); font-style: italic; font-size: 40px; color: #E2B79F; }
+  .valore h3 { font-family: var(--serif); font-weight: 400; font-size: 28px; }
+  .valore p { font-size: 16px; line-height: 1.7; color: var(--linea); }
+
+  /* ===== Galleria ===== */
+  .galleria { padding: 128px var(--margine); display: flex; flex-direction: column; gap: 48px; }
+  .galleria-testa { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+  .galleria-testa h2 { font-size: clamp(38px, 4vw, 56px); }
+  .galleria-griglia { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 24px; }
+  .galleria-griglia figure { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+  .galleria-griglia .foto { height: 520px; }
+  .galleria-griglia figure:nth-child(2) { margin-top: 80px; }
+  .galleria-griglia figure:nth-child(2) .foto, .galleria-griglia figure:nth-child(3) .foto { height: 440px; }
+  .galleria-griglia figcaption { font-size: 14px; color: var(--grigio); }
+  .galleria-griglia figure:hover .foto img { transform: scale(1.05); }
+
+  /* ===== Citazione ===== */
+  .citazione { padding: 0 var(--margine) 128px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px; }
+  .citazione blockquote { font-family: var(--serif); font-style: italic; font-size: clamp(30px, 3.4vw, 48px); line-height: 1.25; max-width: 900px; }
+  .citazione-firma { font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grigio); }
+  .citazione-segno { font-family: var(--serif); font-size: 96px; line-height: 0.5; color: var(--accento); }
+
+  /* ===== Invito ===== */
+  .invito { margin: 0 var(--margine) 112px; padding: 88px 64px; background: #E9E1D3; display: flex; justify-content: space-between; align-items: center; gap: 40px; flex-wrap: wrap; }
+  .invito h2 { font-size: clamp(34px, 3.6vw, 48px); line-height: 1.1; }
+  .invito p { margin-top: 12px; font-size: 17px; color: #4A443D; }
+  .invito-azioni { display: flex; gap: 16px; flex-wrap: wrap; }
+  .bottone { height: 52px; padding: 0 30px; display: inline-flex; align-items: center; font-size: 15px; font-weight: 500; border-radius: 2px; border: 1px solid var(--inchiostro); }
+  .bottone.pieno { background: var(--inchiostro); color: var(--fondo); }
+  .bottone.pieno:hover { background: var(--accento); border-color: var(--accento); color: #fff; }
+  .bottone:not(.pieno):hover { background: var(--inchiostro); color: var(--fondo); }
+
+  /* ===== Footer (uguale alla home) ===== */
+  .footer { padding: 72px var(--margine) 40px; background: var(--inchiostro); color: var(--linea); display: flex; flex-direction: column; gap: 48px; }
+  .footer-colonne { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 48px; }
+  .footer-colonna { display: flex; flex-direction: column; gap: 12px; font-size: 15px; line-height: 1.6; }
+  .footer-titolo { font-weight: 500; color: var(--fondo); }
+  .footer-logo { font-family: var(--serif); font-size: 30px; color: var(--fondo); }
+  .footer a:hover { color: #fff; }
+  .footer-fondo { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13px; color: #A69C8E; border-top: 1px solid #3A352F; padding-top: 24px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .copertina img { animation: none; }
+    .js .entra, .js .entra .foto, .js .entra .foto img { opacity: 1; transform: none; clip-path: none; transition: none; }
+  }
+
+  /* ===== Tablet ===== */
+  @media (max-width: 1024px) {
+    .menu { gap: 20px; }
+    .copertina-testo { padding: 0 48px 72px; }
+    .manifesto { grid-template-columns: 1fr; gap: 24px; padding-block: 96px; }
+    .racconto { gap: 48px; }
+    .racconto-foto .foto { height: 480px; }
+    .valori-griglia { grid-template-columns: 1fr; gap: 32px; }
+    .footer-colonne { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  /* ===== Telefono ===== */
+  @media (max-width: 720px) {
+    .header { grid-template-columns: 1fr auto; height: auto; padding-block: 12px; row-gap: 4px; }
+    .logo { font-size: 26px; }
+    .menu { grid-column: 1 / -1; grid-row: 2; gap: 20px; overflow-x: auto; padding-bottom: 4px; font-size: 14px; white-space: nowrap; }
+    .icone { gap: 0; }
+    .copertina-velo { background: linear-gradient(0deg, rgba(20,18,16,0.75) 0%, rgba(20,18,16,0.35) 60%, rgba(20,18,16,0.1) 100%); }
+    .copertina-testo { padding: 0 20px 56px; gap: 16px; }
+    .copertina p { font-size: 16px; }
+    .manifesto { padding-block: 72px; }
+    .racconto, .racconto.inverso { grid-template-columns: 1fr; padding-bottom: 72px; gap: 32px; }
+    .racconto.inverso .racconto-foto { order: 0; }
+    .racconto-foto .foto { height: 380px; }
+    .anno { font-size: 64px; }
+    .valori { padding-block: 72px; gap: 40px; }
+    .galleria { padding-block: 72px; }
+    .galleria-griglia { grid-template-columns: 1fr; }
+    .galleria-griglia figure:nth-child(2) { margin-top: 0; }
+    .galleria-griglia .foto, .galleria-griglia figure:nth-child(2) .foto, .galleria-griglia figure:nth-child(3) .foto { height: 340px; }
+    .citazione { padding-bottom: 72px; }
+    .invito { padding: 48px 24px; margin-bottom: 72px; }
+    .footer-colonne { grid-template-columns: 1fr; gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="avviso">Spedizione gratuita sopra [SOGLIA] € · Resi facili entro [N] giorni</div>
+
+<header class="header">
+  <nav class="menu" aria-label="Principale">
+    <a href="index.html#donna">Donna</a>
+    <a href="index.html#uomo">Uomo</a>
+    <a href="index.html#novita">Novità</a>
+    <a href="storia.html" aria-current="page">La nostra storia</a>
+  </nav>
+  <a href="index.html" class="logo">Filo <em>&amp;</em> Trama</a>
+  <div class="icone">
+    <button class="icona" aria-label="Cerca"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+    <button class="icona" aria-label="Account"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></button>
+    <button class="icona" aria-label="Carrello"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg></button>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== Copertina ===== -->
+<section class="copertina">
+  <img src="https://images.unsplash.com/photo-1606501126768-b78d4569d3f9?w=2000&q=80&auto=format&fit=crop" alt="Mani che guidano un tessuto di lana sotto la macchina da cucire">
+  <div class="copertina-velo"></div>
+  <div class="copertina-testo">
+    <nav class="briciole" aria-label="Sei qui"><a href="index.html">Home</a> / La nostra storia</nav>
+    <div class="occhiello">La nostra storia</div>
+    <h1>Meno capi,<br><em>scelti meglio.</em></h1>
+    <p>Crediamo in un guardaroba fatto di pochi pezzi, belli e duraturi. Ecco da dove veniamo e come lavoriamo.</p>
+  </div>
+</section>
+
+<!-- ===== Manifesto ===== -->
+<section class="manifesto">
+  <div class="occhiello entra">Il nostro manifesto</div>
+  <p class="entra" style="--ritardo: 150ms">Scegliamo i tessuti uno a uno, lavoriamo con laboratori che conosciamo per nome e disegniamo capi che non passano di moda con la stagione. <em>Vestire bene, per noi, significa vestire con calma.</em></p>
+</section>
+
+<!-- ===== Come è nato ===== -->
+<section class="racconto">
+  <div class="racconto-foto entra">
+    <div class="foto"><img src="https://images.unsplash.com/photo-1626274890657-e28d5b65b04b?w=1200&q=80&auto=format&fit=crop" alt="Vecchia macchina da cucire su un tavolo di legno" loading="lazy"></div>
+  </div>
+  <div class="racconto-testo entra" style="--ritardo: 150ms">
+    <div class="anno">[ANNO]</div>
+    <div class="occhiello">Come è nato</div>
+    <h2 class="serif">Tutto è cominciato da una macchina da cucire.</h2>
+    <p>[Racconta qui l'inizio: chi ha fondato il negozio, in quale città, cosa c'era prima e quale idea ha fatto nascere Filo &amp; Trama.]</p>
+  </div>
+</section>
+
+<!-- ===== Come lavoriamo ===== -->
+<section class="racconto inverso">
+  <div class="racconto-foto entra">
+    <div class="foto"><img src="https://images.unsplash.com/photo-1673201229733-69d19c5c4a87?w=1200&q=80&auto=format&fit=crop" alt="Sarta che cuce un tessuto gessato a macchina" loading="lazy"></div>
+  </div>
+  <div class="racconto-testo entra" style="--ritardo: 150ms">
+    <div class="occhiello">Come lavoriamo</div>
+    <h2 class="serif">Laboratori vicini, <em>mani esperte.</em></h2>
+    <p>[Descrivi i laboratori con cui collaborate: dove si trovano, da quanto tempo lavorate insieme, quali capi realizzano. Più è concreto, più è credibile.]</p>
+    <a href="index.html#novita" class="link-sottolineato" style="align-self: flex-start">Scopri i nuovi arrivi</a>
+  </div>
+</section>
+
+<!-- ===== Valori ===== -->
+<section class="valori">
+  <div class="valori-testa entra">
+    <div class="occhiello">In cosa crediamo</div>
+    <h2 class="serif">Tre promesse, <em>ogni giorno.</em></h2>
+  </div>
+  <div class="valori-griglia">
+    <div class="valore entra" style="--ritardo: 0ms">
+      <div class="valore-num">01</div>
+      <h3>Fibre naturali</h3>
+      <p>Lana, cashmere, cotone e lino: materiali che respirano, invecchiano bene e si prendono cura della pelle.</p>
+    </div>
+    <div class="valore entra" style="--ritardo: 150ms">
+      <div class="valore-num">02</div>
+      <h3>Filiera corta</h3>
+      <p>Lavoriamo con pochi laboratori selezionati, così sappiamo sempre chi ha cucito ogni capo e come.</p>
+    </div>
+    <div class="valore entra" style="--ritardo: 300ms">
+      <div class="valore-num">03</div>
+      <h3>Capi che durano</h3>
+      <p>Tagli puliti e cuciture curate, pensati per essere indossati per anni, non per una sola stagione.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Galleria ===== -->
+<section class="galleria">
+  <div class="galleria-testa entra">
+    <h2 class="serif">Dal filo al negozio</h2>
+    <a href="index.html" class="link-sottolineato">Torna alla collezione</a>
+  </div>
+  <div class="galleria-griglia">
+    <figure class="entra" style="--ritardo: 0ms">
+      <div class="foto"><img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1000&q=80&auto=format&fit=crop" alt="Maglie in lana naturale appese" loading="lazy"></div>
+      <figcaption>I tessuti, scelti a mano</figcaption>
+    </figure>
+    <figure class="entra" style="--ritardo: 150ms">
+      <div class="foto"><img src="https://images.unsplash.com/photo-1578353022142-09264fd64295?w=900&q=80&auto=format&fit=crop" alt="Rocchetti di filo, forbici e metro da sarta" loading="lazy"></div>
+      <figcaption>Ogni dettaglio, curato</figcaption>
+    </figure>
+    <figure class="entra" style="--ritardo: 300ms">
+      <div class="foto"><img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=900&q=80&auto=format&fit=crop" alt="Capi appesi in boutique con luci calde" loading="lazy"></div>
+      <figcaption>La boutique, dove li provi</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===== Citazione ===== -->
+<section class="citazione entra">
+  <div class="citazione-segno" aria-hidden="true">“</div>
+  <blockquote>[Una frase di chi ha fondato il negozio: perché fa questo lavoro, cosa spera che provi chi indossa i vostri capi.]</blockquote>
+  <div class="citazione-firma">[Nome], fondatrice</div>
+</section>
+
+<!-- ===== Invito ===== -->
+<section class="invito entra">
+  <div>
+    <h2 class="serif">Vieni a conoscerci <em>di persona.</em></h2>
+    <p>[Via e numero civico], [Città] · [Orari di apertura]</p>
+  </div>
+  <div class="invito-azioni">
+    <a href="index.html#novita" class="bottone pieno">Scopri la collezione</a>
+    <a href="#" class="bottone">Contattaci</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-colonne">
+    <div class="footer-colonna">
+      <div class="footer-logo">Filo &amp; Trama</div>
+      <div>Abbigliamento essenziale in fibre naturali.</div>
+    </div>
+    <div class="footer-colonna">
+      <div class="footer-titolo">Negozio</div>
+      <div>[Via e numero civico]</div>
+      <div>[CAP, Città]</div>
+      <div>[Orari di apertura]</div>
+    </div>
+    <div class="footer-colonna">
+      <div class="footer-titolo">Assistenza</div>
+      <a href="#">Guida alle taglie</a>
+      <a href="#">Spedizioni e resi</a>
+      <a href="#">Contatti</a>
+    </div>
+    <div class="footer-colonna">
+      <div class="footer-titolo">Seguici</div>
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">Pinterest</a>
+    </div>
+  </div>
+  <div class="footer-fondo">
+    <span>© <span id="anno">2026</span> Filo &amp; Trama · P.IVA [NUMERO]</span>
+    <span>Privacy · Cookie · Termini</span>
+  </div>
+</footer>
+
+<script>
+// ===== Ingresso animato delle sezioni (classe "entra") =====
+(function () {
+  const elementi = document.querySelectorAll('.entra');
+  if (!('IntersectionObserver' in window)) {
+    elementi.forEach(function (el) { el.classList.add('visibile'); });
+    return;
+  }
+  const osservatore = new IntersectionObserver(function (voci) {
+    voci.forEach(function (v) {
+      if (v.isIntersecting) {
+        v.target.classList.add('visibile');
+        osservatore.unobserve(v.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  elementi.forEach(function (el) { osservatore.observe(el); });
+})();
+
+// Anno automatico nel footer
+document.getElementById('anno').textContent = new Date().getFullYear();
+</script>
+<script src="promo.js"></script>
+</body>
+</html>
